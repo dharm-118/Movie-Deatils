@@ -12,15 +12,16 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlin.random.Random
 
 
-class MyAdapterClass(val arrayList: ArrayList<Model>,private val onMovieClickListner: OnMovieClickListner) :
+class MyAdapterClass(
+    val arrayList: ArrayList<Model>,
+    private val onMovieClickListner: OnMovieClickListner
+) :
     RecyclerView.Adapter<MyAdapterClass.ViewHolder>() {
 
-    class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
 
-
-
-        fun bindItems(model: Model){
+        fun bindItems(model: Model) {
 
             itemView.findViewById<TextView>(R.id.movieNameTv).text = model.mMovieName
             itemView.findViewById<TextView>(R.id.movieDescriptionTv).text = model.mMovieDescription
@@ -30,8 +31,8 @@ class MyAdapterClass(val arrayList: ArrayList<Model>,private val onMovieClickLis
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_layout,parent,false)
-        return  ViewHolder(v)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
+        return ViewHolder(v)
 
     }
 
