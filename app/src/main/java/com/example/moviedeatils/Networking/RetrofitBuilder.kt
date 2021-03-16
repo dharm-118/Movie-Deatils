@@ -29,7 +29,7 @@ fun buildRetrofit():Retrofit{
         .build()
 }
 
-fun buildApiService(): RemoteApiService =
-    buildRetrofit().create(RemoteApiService::class.java)
+//fun buildApiService(): RemoteApiService =
+    //buildRetrofit().create(RemoteApiService::class.java)
 
 
