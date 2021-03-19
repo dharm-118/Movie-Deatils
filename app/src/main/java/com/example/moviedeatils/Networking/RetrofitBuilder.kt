@@ -1,5 +1,6 @@
 package com.example.moviedeatils.Networking
 
+import com.example.moviedeatils.RemoteApiService
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -25,11 +26,11 @@ fun buildRetrofit():Retrofit{
         .client(buildClient())
         .addCallAdapterFactory(mRxAdapter)
         .addConverterFactory(GsonConverterFactory.create(mGson))
-        .baseUrl("https://api.themoviedb.org/3/movie/550?api_key=31ebe6c4968f9bdb0085f8953c3372e6")
+        .baseUrl("https://api.themoviedb.org/3/movie/550?api_key=13440c80d34b8bcfc20f27297fac6249")
         .build()
 }
 
-//fun buildApiService(): RemoteApiService =
-    //buildRetrofit().create(RemoteApiService::class.java)
+fun buildApiService(): RemoteApiService =
+    buildRetrofit().create(RemoteApiService::class.java)
 
 

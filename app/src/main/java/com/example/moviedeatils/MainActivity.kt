@@ -14,8 +14,10 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.setPadding
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import retrofit2.Callback
 
 class MainActivity : AppCompatActivity(), OnMovieClickListner {
+    private lateinit var adapter : MyAdapterClass
 
     private lateinit var recyclerView: RecyclerView
     val arrayList = ArrayList<Model>()
@@ -25,6 +27,8 @@ class MainActivity : AppCompatActivity(), OnMovieClickListner {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
         recyclerView = findViewById(R.id.recView)
         arrayList.add(
@@ -213,6 +217,8 @@ class MainActivity : AppCompatActivity(), OnMovieClickListner {
 
 
     }
+
+
 
     override fun onMovieItemClicked(position: Int) {
         val intent = Intent(this, MovieDetails::class.java)
